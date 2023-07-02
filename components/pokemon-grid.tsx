@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Label } from './ui/label';
 import { Input } from './ui/input';
+import { PokemonCard } from './pokemon-card';
 
 export function PokemonGrid() {
   const [searchText, setSearchText] = useState('');
@@ -21,6 +22,9 @@ export function PokemonGrid() {
             onChange={(e) => setSearchText(e.target.value)}
           />
         </div>
+      </div>
+      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
+        <PokemonCard name="Pikachu" />
       </div>
     </>
   );
