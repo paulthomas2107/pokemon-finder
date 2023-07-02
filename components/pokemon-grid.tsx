@@ -15,6 +15,7 @@ export function PokemonGrid() {
           <Input
             type="text"
             value={searchText}
+            autoComplete="off"
             id="pokemonName"
             placeholder="Charizard, Pikatchu, etc."
             onChange={(e) => setSearchText(e.target.value)}
