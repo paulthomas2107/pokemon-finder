@@ -1,5 +1,6 @@
 import { getPokemon } from '@/lib/pokemonAPI';
 import Image from 'next/image';
+import { PokemonImage } from '@/components/pokemon-image';
 
 export default async function PokemonPage({
   params,
@@ -15,12 +16,15 @@ export default async function PokemonPage({
   return (
     <>
       <h1 className="text-4xl text-bold pt-4">{pokemonName}</h1>
-      <Image
-        src={pokemonObject.sprites.other['official-artwork'].front_default}
-        alt={'Picture of ' + pokemonName}
-        width="200"
-        height="200"
-      ></Image>
+      <div
+        className="m-4"
+        style={{ position: 'relative', width: '300px', height: '300px' }}
+      >
+        <PokemonImage
+          image={pokemonObject.sprites.other['official-artwork'].front_default}
+          name={pokemonName}
+        />
+      </div>
     </>
   );
 }
